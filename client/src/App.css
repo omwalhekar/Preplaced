@@ -1,0 +1,248 @@
+/* variables */
+:root {
+  --text-color1: #a2a5a8;
+  --text-color2: #3c4856;
+  --icon-color: #bac9db;
+  --blue-text: #43b4fa;
+  --blue-border: #43b4fa;
+  --heart-color: rgb(255, 0, 85);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 62.5%;
+  color: var(--text-color2);
+}
+a {
+  text-decoration: none;
+}
+a:active,
+a:visited {
+  color: var(--text-color2);
+}
+a:link {
+  color: var(--text-color2);
+}
+.container {
+  font-size: 1.6rem;
+  font-family: montserrat, sans-serif;
+  margin: 3rem;
+  padding: 1rem;
+  /* height: 95vh; */
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+
+  display: grid;
+  grid-template-columns: 20vw auto;
+}
+.navigation,
+.contentBox {
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  /* padding: 1.5rem; */
+  margin: 2rem;
+}
+.navigation_tile {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 3rem auto;
+  border-bottom: 0.5px solid rgb(231, 231, 231);
+}
+.navigation_tile:hover {
+  border-right: 3px solid var(--blue-border);
+}
+.navigation_tile a:active {
+  border-right: 3px solid var(--blue-border);
+}
+.navigation_tile:hover .navigation_link {
+  color: var(--blue-text);
+}
+.navigation_link {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.navigation_desc {
+  color: var(--text-color1);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+}
+.fas {
+  color: var(--icon-color);
+}
+.navigation_tile:hover .fas {
+  color: var(--blue-text);
+}
+.navigation_tile_link a:active {
+  color: var(--blue-text);
+}
+
+.header {
+  padding: 2rem;
+  margin-top: 2rem;
+  border-bottom: 0.5px solid rgb(231, 231, 231);
+}
+.header_nav {
+  display: flex;
+  justify-content: space-between;
+}
+.header_list {
+  display: flex;
+  justify-content: space-between;
+}
+.header_list > li {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-color1);
+  list-style: none;
+  margin: 0 1rem;
+}
+
+.btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-color2);
+  cursor: pointer;
+}
+.fa-chevron-down {
+  color: #c3cdd8;
+  font-size: 1rem;
+}
+.nav_link:visited {
+  color: #80c8f4;
+  font-weight: 800;
+}
+.searchbar > input[type="search"] {
+  width: 100%;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 2rem 1.5rem 0 0;
+  border: none;
+  outline: none;
+  background-color: #f3f7f9;
+}
+.searchbar > input[type="search"]::placeholder {
+  color: #c3cdd8;
+  font-size: 1.5rem;
+  font-family: Helvetica, "FontAwesome", sans-serif;
+  font-weight: 500;
+}
+
+/* CARDS SECTIONS */
+.integrations {
+  padding: 3rem;
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 3rem;
+}
+.integration_row {
+}
+
+.integration_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+}
+.integration_cards > card {
+  /* background-color: var(--text-color1); */
+  padding: 1rem 2rem;
+  height: 30rem;
+  border-radius: 5px;
+  position: relative;
+  transform: scale(1);
+  box-shadow: rgba(0, 0, 0, 0.1) 0.2rem 0.2rem 2rem;
+  transition: all 0.08s;
+  cursor: pointer;
+}
+card:hover {
+  /* background-color: var(--text-color1); */
+  transform: scale(1.02);
+  box-shadow: rgba(0, 0, 0, 0.2) 0.2rem 0.2rem 2rem;
+}
+.connect_link {
+  font-weight: 600;
+}
+card:hover .connect_link {
+  color: var(--blue-text);
+}
+.card_head {
+  width: 100%;
+  text-align: center;
+}
+.card_logo {
+  margin: 1.5rem;
+  height: 8rem;
+  width: 11rem;
+}
+.card_name {
+}
+.card_content {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 1rem 0;
+  color: var(--text-color1);
+}
+.card_buttons {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+}
+.connected {
+  color: var(--blue-text);
+}
+.card_icons {
+  width: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.show {
+  opacity: 0;
+}
+
+card:hover .show {
+  opacity: 1;
+}
+.fa-heart {
+  font-size: 2rem;
+}
+.fa-heart:hover {
+  color: var(--heart-color);
+}
+.red-heart {
+  color: var(--heart-color);
+}
+.fa-trash-alt:hover {
+  transform: scale(1.04);
+  transform: all ease 0.02s;
+}
+
+#integration_heading {
+  font-family: montserrat;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: var(--text-color1);
+}
+
+/* FAVORITES COMPONENT  */
+.favorites {
+  height: 80vh;
+  margin-top: 2rem;
+  padding: 2rem;
+}
