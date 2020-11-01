@@ -40,6 +40,7 @@ a:link {
 
   display: grid;
   grid-template-columns: 20vw auto;
+  height: min-content;
 }
 .navigation,
 .contentBox {
@@ -242,7 +243,6 @@ card:hover .show {
 
 /* FAVORITES COMPONENT  */
 .favorites {
-  height: 80vh;
   margin-top: 2rem;
   padding: 2rem;
 }

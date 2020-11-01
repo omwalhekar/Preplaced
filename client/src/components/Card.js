@@ -8,6 +8,13 @@ const Card = ({name,src,content,id,favorited,connected, remFavcard,getCards}) =>
   useEffect(() => {
     getCards();
   }, [getCards]);
+
+  function change(){
+    const button = document.getElementById(id + "icon");
+    button.classList.toggle("red-heart"); 
+    remFavcard(name);
+   
+  }
     return (
     <card>
     <div className="card_head"> 
@@ -18,7 +25,7 @@ const Card = ({name,src,content,id,favorited,connected, remFavcard,getCards}) =>
     <div className="card_buttons">
       <a href="#" className={`connect_link ${connected ? "connected" :""}`}>{connected ? "Connected" :"Connection"}</a>
       <div className="card_icons">
-        <button className="btn" id={id} onClick={() => {remFavcard(name)}}><i className={ favorited? "fas fa-heart hide red-heart" : "fas fa-heart hide " }></i></button>
+        <button className="btn" id={id} onClick={() => {change();}}><i id={id + "icon"} className={favorited? "fas fa-heart red-heart":"fas fa-heart" }></i></button>
         <i className="fas fa-trash-alt show"></i>
       </div>                  
     </div>
